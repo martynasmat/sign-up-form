@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <div class="content">
+        <div class="photo-container">
+            <img src="./images/pexels-alex-azabache-3254753.jpg" alt="Airplane">
+            <div class="photo-text-overlay">
+                <span class="photo-text">Generic flight booking service</span>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="form-wrapper">
+                <label for="first-name">FIRST NAME:</label>
+                <input type="text" minlength="1" id="first-name" required>
+                <label for="last-name">LAST NAME:</label>
+                <input type="text" minlength="1" id="last-name" required>
+                <label for="gender">GENDER:</label>
+                <select id="gender" name="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <label for="age">AGE:</label>
+                <input type="number" min="16" max="150" id="age" required>
+                <label for="email">EMAIL:</label>
+                <input type="text" id="email" required>
+                <label for="phone">PHONE:</label>
+                <input type="numeric" id="phone" required>
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password">
+                <label for="confirm-password">CONFIRM PASSWORD:</label>
+                <input type="password" id="confirm-password">
+                <label for="tos-accept">I accept the <a href="./terms_of_service.html">terms of service</a></label>
+                <input type="checkbox" required>
+            </div>
+        </div>
+    </div>
+    <script src="./script/script.js" defer></script>
+</body>
+</html>
