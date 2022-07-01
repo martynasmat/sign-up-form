@@ -51,6 +51,8 @@ table {
     --second-color: #18978F;
     --accent-color-1: #E9DAC1;
     --accent-color-2: #F7ECDE;
+    --valid-color: #68b654c0;
+    --invalid-color: #ee6c6c;
     --photo-text-size: 24px;
 }
 
@@ -172,6 +174,14 @@ input, select {
     max-height: 20px;
     border: 2px solid var(--accent-color-1);
     background-color: white;
+}
+
+.invalid {
+    border: 2px solid var(--invalid-color);
+}
+
+.valid {
+    border: 2px solid var(--valid-color);
 }
 
 button {
