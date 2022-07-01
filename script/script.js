@@ -122,23 +122,158 @@ function checkGender(element) {
 };
 
 function checkAge(element) {
-
+    if(element.value == "") {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Enter your age.");
+        element.reportValidity();
+        return false;
+    }else if(element.validity.rangeUnderflow){
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("You might be too young for this.");
+        element.reportValidity();
+        return false;
+    }else if(element.validity.rangeOverflow){
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity(`Be honest with me, you're not ${element.value}`);
+        element.reportValidity();
+        return false;
+    }else {
+        if(!element.classList.contains('valid')) {
+            element.classList.remove('invalid');
+            element.classList.add('valid');
+        };
+        element.setCustomValidity("");
+        return true;
+    };
 };
 
 function checkEmail(element) {
-
+    if(element.value == "") {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Enter your e-mail address.");
+        element.reportValidity();
+        return false;
+    }else if(element.validity.typeMismatch) {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.reportValidity();
+        return false;
+    }else {
+        if(!element.classList.contains('valid')) {
+            element.classList.remove('invalid');
+            element.classList.add('valid');
+        };
+        element.setCustomValidity("");
+        return true;
+    };
 };
 
 function checkPhone(element) {
-
+    if(element.value == "") {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Enter your phone number.");
+        element.reportValidity();
+        return false;
+    }else if(element.validity.patternMismatch) {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Wrong format (include country code).");
+        element.reportValidity();
+        return false;
+    }else {
+        if(!element.classList.contains('valid')) {
+            element.classList.remove('invalid');
+            element.classList.add('valid');
+        };
+        element.setCustomValidity("");
+        return true;
+    };
 };
 
 function checkPassword(element) {
-
+    if(element.value == "") {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Enter a password.");
+        element.reportValidity();
+        return false;
+    }else {
+        if(!element.classList.contains('valid')) {
+            element.classList.remove('invalid');
+            element.classList.add('valid');
+        };
+        element.setCustomValidity("");
+        return true;
+    };
 };
 
 function checkConfirmPassword(element) {
-
+    const password = document.querySelector('#password').value;
+    if(password == "") {
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("Enter a password first.");
+        element.reportValidity();
+        return false;
+    }else if(element.value != password){
+        if(element.classList.contains('valid')) {
+            element.classList.remove('valid');
+        };
+        if(!element.classList.contains('invalid')) {
+            element.classList.add('invalid');
+        };
+        element.setCustomValidity("This doesn't match your password.");
+        element.reportValidity();
+        return false;
+    }else {
+        if(!element.classList.contains('valid')) {
+            element.classList.remove('invalid');
+            element.classList.add('valid');
+        };
+        element.setCustomValidity("");
+        return true;
+    };
 };
 
 const inputElements = document.querySelectorAll('input, select');
@@ -170,6 +305,7 @@ form.addEventListener('submit', function(e) {
     }else {
         e.preventDefault();
         setTimeout(() => {
+            inputElementArray.forEach(i => i.classList.remove('valid'));
             form.appendChild(submitFeedback);
             form.reset();
         }, 750);

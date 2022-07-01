@@ -91,9 +91,9 @@ img {
 }
 
 .photo-text-overlay:hover {
-    height: 101vh;
+    height: 50vh;
     background-color: rgb(84, 186, 185, 0.85);
-    --photo-text-size: 42px;
+    --photo-text-size: 62px;
 }
 
 .photo-text {
@@ -104,8 +104,9 @@ img {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    transition: 1s;
+    transition: 0.5s;
 }
+
 
 .form-container {
     flex: 1.8 1 0;
@@ -174,6 +175,7 @@ input, select {
     max-height: 20px;
     border: 2px solid var(--accent-color-1);
     background-color: white;
+    outline: none;
 }
 
 .invalid {
