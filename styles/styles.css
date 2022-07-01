@@ -141,7 +141,7 @@ fieldset {
     width: 90%;
     max-width: 900px;
     gap: 30px;
-    border: 2px solid var(--accent-color-1);
+    border: 3px solid var(--accent-color-1);
     border-radius: 25px;
     padding: 30px;
 }
@@ -169,6 +169,7 @@ fieldset {
 
 legend {
     text-align: center;
+    color: rgb(177, 159, 129);
 }
 
 input, select {
@@ -187,7 +188,7 @@ input, select {
 }
 
 button {
-    border: 2px solid var(--second-color);
+    border: 3px solid var(--second-color);
     width: 100px;
     height: 45px;
     border-radius: 35px;
@@ -195,6 +196,7 @@ button {
     background-color: var(--main-color);
     color: var(--accent-color-2);
     font-weight: 600;
+    box-shadow: 3px 3px 0px 0px #18978F;
 }
 
 button:hover {
@@ -204,4 +206,5 @@ button:hover {
     background-color: var(--accent-color-1);
     color: var(--second-color);
     cursor: pointer;
+    box-shadow: none;
 }
