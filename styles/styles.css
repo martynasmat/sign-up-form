@@ -91,7 +91,63 @@ img {
 }
 
 .form-wrapper {
-    border: 2px solid black;
-    height: 40%;
+    height: auto;
+    padding: 50px;
+    width: auto;
+    min-width: 800px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    max-width: 900px;
+    gap: 30px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.account-details-row {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.personal-information-row {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.form-element {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+legend {
+    text-align: center;
+}
+
+.buttons {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input {
+    max-height: 15px;
 }
